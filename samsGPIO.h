@@ -77,7 +77,7 @@ public:
     #if defined(ARDUINO_AVR_MEGA2560)
         #include "pins/mega.h"
     #else
-        #error "samsGPIO.h: Board unsupported"
+        #warning "samsGPIO.h: Board unsupported"
     #endif
 
 #endif
