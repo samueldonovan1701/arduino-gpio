@@ -3,9 +3,9 @@ A faster way to manipulate Arduino GPIO pins
 
 ## Usage
 
-To use the library, copy the files (except for `GPIO.ino`) in your project folder, and
+To use the library, clone or download the repository into your project folder. After that, you can
 ```c
-#include "samsGPIO.h"
+#include "arduino-gpio/GPIO.h"
 ```
 
 #### Constructor
