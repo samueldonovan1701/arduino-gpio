@@ -1,5 +1,5 @@
 # arduino-gpio
-A faster way to manipulate Arduino GPIO pins
+A simple way to manipulate Arduino GPIO pins on the register level
 
 ## Usage
 
