@@ -5,7 +5,7 @@ A faster way to manipulate Arduino GPIO pins
 
 To use the library, clone or download the repository into your project folder. After that, you can
 ```c
-#include "arduino-gpio/GPIO.h"
+#include "arduino-simpleGPIO/simpleGPIO.h"
 ```
 
 #### Constructor

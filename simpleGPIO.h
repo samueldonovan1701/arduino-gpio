@@ -1,5 +1,5 @@
-#ifndef SAMS_GPIO
-#define SAMS_GPIO
+#ifndef SIMPLE_GPIO
+#define SIMPLE_GPIO
 
 typedef uint8_t byte;
 typedef volatile uint8_t reg;
