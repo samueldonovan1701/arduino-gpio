@@ -8,7 +8,7 @@ To use the library, clone or download the repository into your project folder. A
 #include "arduino-simpleGPIO/simpleGPIO.h"
 ```
 
-#### Constructor
+### Constructor
 ```c
 GPIO led = GPIO(B, 7);
 ```
@@ -18,7 +18,7 @@ Using a bit number larger than 7 will have no affect.
 
 Using a port that does not exist will cause a compile-time error.
 
-#### SetMode(OUTPUT/INPUT) / AsOutput() / AsInput()
+### SetMode(OUTPUT/INPUT) / AsOutput() / AsInput()
 ```c
 GPIO13.SetMode(OUTPUT); 
 GPIO13.AsOutput();
@@ -27,7 +27,7 @@ GPIO13.SetMode(INPUT);
 GPIO13.AsInput();
 ```
 Anything not `INPUT` (0) is considered `OUTPUT` (1)
-#### Write(HIGH/LOW) / High() / Low()
+### Write(HIGH/LOW) / High() / Low()
 ```c
 GPIO13.Write(HIGH);
 GPIO13.High();
@@ -37,13 +37,13 @@ GPIO13.Low();
 ```
 Anything not `LOW` (0) is considered `HIGH` (1)
 
-#### Read()
+### Read()
 ```c
 uint8_t b = GPIO13.Read();
 ```
 Returns `HIGH` (1) or `LOW` (0)
 
-### Supported Boards
+## Supported Boards
 On supported boards, pins are predefined and can be accessed via `GPIOXX` where `XX` is the on-board pin number. For example:
 ```c
 GPIO13.Write(HIGH);
