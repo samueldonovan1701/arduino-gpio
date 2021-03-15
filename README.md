@@ -8,40 +8,67 @@ To use the library, clone or download the repository into your project folder. A
 #include "arduino-simpleGPIO/simpleGPIO.h"
 ```
 
-### Constructor
-```c
-GPIO led = GPIO(B, 7);
-```
-Will assign `led` to a `GPIO` instance tied to PORTB/PINB, bit 7. Which physical pin this corresponds to on your board will vary between boards.
+### Functions
 
-Using a bit number larger than 7 will have no affect.
-
-Using a port that does not exist will cause a compile-time error.
-
-### SetMode(OUTPUT/INPUT) / AsOutput() / AsInput()
-```c
-GPIO13.SetMode(OUTPUT); 
-GPIO13.AsOutput();
-
-GPIO13.SetMode(INPUT);
-GPIO13.AsInput();
-```
-Anything not `INPUT` (0) is considered `OUTPUT` (1)
-### Write(HIGH/LOW) / High() / Low()
-```c
-GPIO13.Write(HIGH);
-GPIO13.High();
-
-GPIO13.Write(LOW);
-GPIO13.Low();
-```
-Anything not `LOW` (0) is considered `HIGH` (1)
-
-### Read()
-```c
-uint8_t b = GPIO13.Read();
-```
-Returns `HIGH` (1) or `LOW` (0)
+<table>
+	<tr>
+		<th>Signature</th>
+		<th>Valid Input</th>
+		<th>Returns</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><code>GPIO GPIO(X, byte)</code></td>
+		<td>
+			<p><code>X</code> can be any <b>raw letter</b> (not a string) of ports your board supports</p>
+			<p><code>byte</code> is the port's bit number</p>
+		</td>
+		<td><code>A new GPIO instance</code></td>
+		<td>A macro for constructing a new <code>GPIO</code> instance</td>
+	</tr>
+	<tr>
+		<td><code>void SetMode(byte)</code></td>
+		<td><code>INPUT</code>, <code>OUTPUT</code></td>
+		<td></td>
+		<td>Sets the pin to be an input or output</td>
+	</tr>
+	<tr>
+		<td><code>void AsInput()</code></td>
+		<td></td>
+		<td></td>
+		<td>Sets the pin to be an input</td>
+	</tr>
+	<tr>
+		<td><code>void AsOutput()</code></td>
+		<td></td>
+		<td></td>
+		<td>Sets the pin to be an output</td>
+	</tr>
+	<tr>
+		<td><code>void Write(byte)</code></td>
+		<td><code>HIGH</code>, <code>LOW</code></td>
+		<td></td>
+		<td>Sets the pin's state (must be in <code>OUTPUT</code> mode)</td>
+	</tr>
+	<tr>
+		<td><code>void Low()</code></td>
+		<td></td>
+		<td></td>
+		<td>Sets the pin's state <code>LOW</code> (must be in <code>OUTPUT</code> mode)</td>
+	</tr>
+	<tr>
+		<td><code>void High()</code></td>
+		<td></td>
+  <td></td>
+		<td>Sets the pin's state <code>HIGH</code> (must be in <code>OUTPUT</code> mode)</td>
+	</tr>
+	<tr>
+		<td><code>void Read()</code></td>
+		<td></td>
+		<td><code>HIGH</code> or <code>LOW</code></td>
+		<td>Reads the pin's state (must be in <code>INPUT</code> mode)</td>
+	</tr>
+</table>
 
 ## Supported Boards
 On supported boards, pins are predefined and can be accessed via `GPIOXX` where `XX` is the on-board pin number. For example:
