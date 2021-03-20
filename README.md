@@ -1,11 +1,11 @@
-# arduino-gpio
-A simple way to manipulate Arduino GPIO pins on the register level
+# avr-gpio
+A simple way to manipulate AVR GPIO pins at the register level
 
 ## Usage
 
 To use the library, clone or download the repository into your project folder. After that, you can
 ```c
-#include "arduino-simpleGPIO/simpleGPIO.h"
+#include "avr-gpio/GPIO.h"
 ```
 
 ### Functions
@@ -13,60 +13,63 @@ To use the library, clone or download the repository into your project folder. A
 <table>
 	<tr>
 		<th>Signature</th>
-		<th>Valid Input</th>
-		<th>Returns</th>
 		<th>Description</th>
 	</tr>
 	<tr>
-		<td><code>GPIO GPIO(X, byte)</code></td>
+		<td><code>GPIO(X, byte)</code></td>
 		<td>
-			<p><code>X</code> can be any <b>raw letter</b> (not a string) of ports your board supports</p>
-			<p><code>byte</code> is the port's bit number</p>
+			<p>A macro for constructing a new <code>GPIO</code> instance</p>
+			<p><code>X</code> is the Port (e.g. A,B,C) (NOT A STRING)</p>
+			<p><code>byte</code> is the bit number (0-7)</p>
 		</td>
-		<td><code>A new GPIO instance</code></td>
-		<td>A macro for constructing a new <code>GPIO</code> instance</td>
+	</tr>
+	<tr>
+		<th>Mode Commands</th>
+		<th></th>
 	</tr>
 	<tr>
 		<td><code>void SetMode(byte)</code></td>
-		<td><code>INPUT</code>, <code>OUTPUT</code></td>
-		<td></td>
-		<td>Sets the pin to be an input or output</td>
+		<td>Sets the pin to be an <code>INPUT</code> or <code>OUTPUT</code></td>
 	</tr>
 	<tr>
-		<td><code>void AsInput()</code></td>
-		<td></td>
-		<td></td>
+		<td><code>AsInput()</code></td>
 		<td>Sets the pin to be an input</td>
 	</tr>
 	<tr>
-		<td><code>void AsOutput()</code></td>
-		<td></td>
-		<td></td>
+		<td><code>AsOutput()</code></td>
 		<td>Sets the pin to be an output</td>
 	</tr>
 	<tr>
-		<td><code>void Write(byte)</code></td>
-		<td><code>HIGH</code>, <code>LOW</code></td>
-		<td></td>
-		<td>Sets the pin's state (must be in <code>OUTPUT</code> mode)</td>
+		<th>Write Commands</th>
+		<th>Pin must be set to <code>OUTPUT</code> mode</th>
 	</tr>
 	<tr>
-		<td><code>void Low()</code></td>
-		<td></td>
-		<td></td>
+		<td><code>Write(byte)</code></td>
+		<td>Sets the pin's state <code>HIGH</code> or <code>LOW</code></td>
+	</tr>
+	<tr>
+		<td><code>Low()</code></td>
 		<td>Sets the pin's state <code>LOW</code> (must be in <code>OUTPUT</code> mode)</td>
 	</tr>
 	<tr>
-		<td><code>void High()</code></td>
-		<td></td>
-  <td></td>
+		<td><code>High()</code></td>
 		<td>Sets the pin's state <code>HIGH</code> (must be in <code>OUTPUT</code> mode)</td>
 	</tr>
 	<tr>
-		<td><code>void Read()</code></td>
-		<td></td>
-		<td><code>HIGH</code> or <code>LOW</code></td>
-		<td>Reads the pin's state (must be in <code>INPUT</code> mode)</td>
+		<th>Read Commands</th>
+		<th>Pin must be set to <code>INPUT</code> mode</th>
+	</tr>
+	<tr>
+		<td><code>byte Read()</code></td>
+		<td>Reads the pin's state</td>
+	</tr>
+	<tr>
+		<td><code>bool isHigh()</code></td>
+		<td>Returns <code>true</code> if the pin is <code>HIGH</code></td>
+	</tr>
+	<tr>
+		<td><code>bool isLow()</code></td>
+		<td>Returns <code>true</code> if the pin is <code>LOW</code></td>
 	</tr>
 </table>
 
@@ -85,4 +88,4 @@ Feel free to contribute your own board's pin definitons.
 - Only digital input/output is supported
 - Not all boards will have pin definitions, although they can be added manually
 - Limited run time resolution options
-- Pin mode is not checked before attempting to `Read()` or `Write()`, this is left to the user
+- Pin mode is not checked before attempting to `Read()` or `Write()`: this is left to the user
