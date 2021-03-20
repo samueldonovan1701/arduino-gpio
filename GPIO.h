@@ -1,5 +1,6 @@
-#ifndef SIMPLE_GPIO
-#define SIMPLE_GPIO
+#ifndef AVR_GPIO
+#define AVR_GPIO
+#include <avr/io.h>
 
 typedef uint8_t byte;
 typedef volatile uint8_t reg;
@@ -33,18 +34,18 @@ public:
     void SetMode(byte mode)
     {
 		if(mode == INPUT)
-			AsInput();
+			Input();
 		else
-			AsOutput();
+			Output();
 	};
-    void AsInput()
+    void Input()
     {
     	*DDR &= ~(1 << PIN);
-	};
-    void AsOutput()
+	}
+    void Output()
 	{
     	*DDR |= 1 << this->PIN; 
-	};
+	}
 
     #ifndef LOW
     #define LOW 0
@@ -55,23 +56,27 @@ public:
     void Write(byte state)
     {
   		if(state == LOW)
-    		this->Low();
+    		this->Set();
   		else
-    		this->High();
-	};
-    void High()
+    		this->Clear();
+	}
+    void Set()
     {
   		*PORT_OUT |= 1 << PIN;
-	};
-    void Low()
+	}
+    void Clear()
 	{
 		*PORT_OUT &= ~(1 << PIN);
-	};
+	}
+    void Toggle()
+    {
+        *PORT_OUT ^= (1 << PIN);
+    }
 
     byte Read()
 	{
 		return (*PORT_IN >> PIN) & 1;
-	};
+	}
 };
 
     #if defined(ARDUINO_AVR_MEGA2560)

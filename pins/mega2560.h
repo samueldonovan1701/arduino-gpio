@@ -1,5 +1,5 @@
-#ifndef SIMPLE_GPIO_PINS
-#define SIMPLE_GPIO_PINS
+#ifndef AVR_GPIO_PINS
+#define AVR_GPIO_PINS
 
 #define GPIO0  GPIO(E,0)
 #define GPIO1  GPIO(E,1)
