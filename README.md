@@ -32,11 +32,11 @@ To use the library, clone or download the repository into your project folder. A
 		<td>Sets the pin to be an <code>INPUT</code> or <code>OUTPUT</code></td>
 	</tr>
 	<tr>
-		<td><code>AsInput()</code></td>
+		<td><code>Input()</code></td>
 		<td>Sets the pin to be an input</td>
 	</tr>
 	<tr>
-		<td><code>AsOutput()</code></td>
+		<td><code>Output()</code></td>
 		<td>Sets the pin to be an output</td>
 	</tr>
 	<tr>
