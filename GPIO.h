@@ -77,6 +77,14 @@ public:
 	{
 		return (*PORT_IN >> PIN) & 1;
 	}
+    bool isHigh()
+    {
+        return this->Read();
+    }
+    bool isLow()
+    {
+        return !isHigh();
+    }
 };
 
     #if defined(ARDUINO_AVR_MEGA2560)
