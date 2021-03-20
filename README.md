@@ -1,4 +1,4 @@
-# avr-gpio
+# avr-GPIO
 A simple way to manipulate AVR GPIO pins at the register level
 
 ## Usage
