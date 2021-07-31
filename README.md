@@ -51,12 +51,12 @@ To use the library, clone or download the repository into your project folder. A
 	</tr>
 	<tr>
 		<td></td>
-		<td><code>void Input()</code></td>
+		<td><code>void setInput()</code></td>
 		<td>Sets the pin to be an input</td>
 	</tr>
 	<tr>
 		<td></td>
-		<td><code>void Output()</code></td>
+		<td><code>void setOutput()</code></td>
 		<td>Sets the pin to be an output</td>
 	</tr>
 	<tr>
@@ -80,6 +80,11 @@ To use the library, clone or download the repository into your project folder. A
 		<td></td>
 		<td><code>void setHigh()</code></td>
 		<td>Sets the pin's state <code>HIGH</code> (must be in <code>OUTPUT</code> mode)</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><code>void Toggle()</code></td>
+		<td>Toggles the pin's state between <code>HIGH</code> and <code>LOW</code></td>
 	</tr>
 	<tr>
 		<th>Input</th>
@@ -111,7 +116,7 @@ GPIO13.Write(HIGH);
 Currently, the following boards are supported:
 - ATMEGA2560
  
-Feel free to contribute your own board's pin definitons. 
+Feel free to contribute your own board's pin definitons (see <code>/pins/</code>).
  
 ## Limitations
 - Only digital input/output is supported
