@@ -38,11 +38,11 @@ public:
 		else
 			Output();
 	};
-	void Input()
+	void setInput()
 	{
 		*DDR &= ~(1 << PIN);
 	}
-	void Output()
+	void setOutput()
 	{
 		*DDR |= 1 << this->PIN; 
 	}
@@ -79,11 +79,11 @@ public:
 	}
 	bool isHigh()
 	{
-	return this->Read();
+		return this->Read();
 	}
 	bool isLow()
 	{
-	return !isHigh();
+		return !isHigh();
 	}
 };
 
