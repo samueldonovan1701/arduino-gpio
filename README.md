@@ -12,10 +12,12 @@ To use the library, clone or download the repository into your project folder. A
 
 <table>
 	<tr>
+		<th></th>
 		<th>Signature</th>
 		<th>Description</th>
 	</tr>
 	<tr>
+		<td></td>
 		<td><code>GPIO(X, byte)</code></td>
 		<td>
 			<p>A macro for constructing a new <code>GPIO</code> instance</p>
@@ -24,50 +26,77 @@ To use the library, clone or download the repository into your project folder. A
 		</td>
 	</tr>
 	<tr>
-		<th>Mode Commands</th>
-		<th></th>
+		<td></td>
+		<td><code>HIGH</code></td>
+		<td>
+			A macro with value <code>1</code>
+		</td>
 	</tr>
 	<tr>
+	<tr>
+		<td></td>
+		<td><code>LOW</code></td>
+		<td>
+			A macro with value <code>0</code>
+		</td>
+	</tr>
+	<tr>
+		<th>Configuration</th>
+		<td colspan=2></td>
+	</tr>
+	<tr>
+		<td></td>
 		<td><code>void SetMode(byte)</code></td>
 		<td>Sets the pin to be an <code>INPUT</code> or <code>OUTPUT</code></td>
 	</tr>
 	<tr>
-		<td><code>Input()</code></td>
+		<td></td>
+		<td><code>void Input()</code></td>
 		<td>Sets the pin to be an input</td>
 	</tr>
 	<tr>
-		<td><code>Output()</code></td>
+		<td></td>
+		<td><code>void Output()</code></td>
 		<td>Sets the pin to be an output</td>
 	</tr>
 	<tr>
-		<th>Write Commands</th>
-		<th>Pin must be set to <code>OUTPUT</code> mode</th>
+		<th>Output</th>
+		<td colspan=2></td>
 	</tr>
 	<tr>
+		<td></td>
 		<td><code>Write(byte)</code></td>
-		<td>Sets the pin's state <code>HIGH</code> or <code>LOW</code></td>
+		<td>
+			<p>Sets the pin's state <code>HIGH</code> or <code>LOW</code></p>
+			<p>Anything not <code>LOW</code> is will be interpreted as <code>HIGH</code></p>
+		</td>
 	</tr>
 	<tr>
-		<td><code>Low()</code></td>
+		<td></td>
+		<td><code>void setLow()</code></td>
 		<td>Sets the pin's state <code>LOW</code> (must be in <code>OUTPUT</code> mode)</td>
 	</tr>
 	<tr>
-		<td><code>High()</code></td>
+		<td></td>
+		<td><code>void setHigh()</code></td>
 		<td>Sets the pin's state <code>HIGH</code> (must be in <code>OUTPUT</code> mode)</td>
 	</tr>
 	<tr>
-		<th>Read Commands</th>
-		<th>Pin must be set to <code>INPUT</code> mode</th>
+		<th>Input</th>
+		<td colspan=2></td>
 	</tr>
 	<tr>
+		<td></td>
 		<td><code>byte Read()</code></td>
 		<td>Reads the pin's state</td>
 	</tr>
 	<tr>
+		<td></td>
 		<td><code>bool isHigh()</code></td>
 		<td>Returns <code>true</code> if the pin is <code>HIGH</code></td>
 	</tr>
 	<tr>
+		<td></td>
 		<td><code>bool isLow()</code></td>
 		<td>Returns <code>true</code> if the pin is <code>LOW</code></td>
 	</tr>
